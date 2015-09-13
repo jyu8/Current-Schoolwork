@@ -1,0 +1,35 @@
+[33mcommit f11654e9d2e04ee909ae6a9665b20874fa792915[m
+Author: Josh <jyu8@emich.edu>
+Date:   Fri Sep 11 18:14:54 2015 -0400
+
+    Add rest of the test files
+
+[33mcommit b72d455a85d12696833965ffe5ebb667ddb842b6[m
+Author: Josh <jyu8@emich.edu>
+Date:   Fri Sep 11 18:12:31 2015 -0400
+
+    Test Commit
+
+[33mcommit 19b44b159ffe6ee55f6cb0ddc4731f910b108938[m
+Author: jyu8 <jyu8@emich.edu>
+Date:   Wed Sep 9 06:36:23 2015 -0400
+
+    Delete Cosc 231
+
+[33mcommit 821ce29c8c1f2e2d8f53b5bfc2d6046541d41591[m
+Author: jyu8 <jyu8@emich.edu>
+Date:   Wed Sep 9 06:36:08 2015 -0400
+
+    Create Cosc 231
+
+[33mcommit 0d6bc7071b751ffaedf5b7622d42ab0e84e27ab0[m
+Author: jyu8 <jyu8@emich.edu>
+Date:   Wed Sep 9 06:23:29 2015 -0400
+
+    Create README.md
+
+[33mcommit 8673ec49aeb92a122c1d8afccd4c2f0d0683cf27[m
+Author: jyu8 <jyu8@emich.edu>
+Date:   Wed Sep 9 06:16:30 2015 -0400
+
+    :lollipop: Added .gitattributes & .gitignore files
