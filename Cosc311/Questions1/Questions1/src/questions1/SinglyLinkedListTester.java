@@ -30,7 +30,7 @@ public class SinglyLinkedListTester
 //    list1.Q6(list1);
 //    list1.Q7(list1,100);
 //    list1.Q8(list1);
-    list1.Q9(list1,2,4);
+//    list1.Q9(list1,2,4);
     
     
     System.out.println();
