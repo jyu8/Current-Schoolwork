@@ -280,4 +280,74 @@ public class SinglyLinkedList
         set(num1,number2);
         set(num2,number1);
     }
+    public void Q10(SinglyLinkedList list)
+    {
+        Node tmp = head;
+        int max = (int) tmp.data;
+        while(tmp.next !=null)
+        {
+            if((int) tmp.data > max)
+                max = (int) tmp.data;
+            tmp = tmp.next;
+        }
+        System.out.println(max);
+    }
+    public void Q12(SinglyLinkedList list) 
+    {
+      int i, j, minIndex, tmp;
+      int n = list.size;
+      for (i = 0; i < n - 1; i++) 
+      {
+            minIndex = i;
+            for (j = i + 1; j < n; j++)
+                if ((int) list.get(j) < (int) list.get(minIndex))
+                {
+                    list.set(minIndex, list.get(j));
+                }
+            if (minIndex != i) 
+            {
+                tmp = (int) list.get(i);
+                list.set(i, list.get(minIndex));
+                list.set(minIndex, tmp);
+            }
+      }
+    }
+    public void Q11(SinglyLinkedList list)
+    {
+      int i, j, maxIndex, tmp;
+      int n = list.size;
+      for (i = n-1; i > 0; i--) 
+      {
+            maxIndex = 0;
+            for (j = 1; j <= i; j++)
+                if ((int) list.get(j) < (int) list.get(maxIndex))
+                {
+                    list.set(maxIndex, list.get(j));
+                }
+            if (maxIndex != i) 
+            {
+                tmp = (int) list.get(i);
+                list.set(maxIndex, i);
+                list.set(i, tmp);
+            }
+      }
+    }
+    public void Q13(SinglyLinkedList list1,SinglyLinkedList list2)
+    {
+        int j = 0;
+        for(int i = 0; i<list1.size; i++)
+        {
+            list2.addLast(list1.get(j));
+            j++;
+        }
+    }
+    public void Q14(SinglyLinkedList list)
+    {
+        int j = list.size-1;
+        for(int i = 0; i<list.size;i++)
+        {
+            System.out.println(list.get(j));
+            j--;
+        }
+    }
 }
