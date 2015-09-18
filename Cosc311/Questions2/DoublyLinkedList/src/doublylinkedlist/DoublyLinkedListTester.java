@@ -1,15 +1,11 @@
-package questions1;
+package doublylinkedlist;
 
-/**
- *
- * @author Josh
- */
-public class SinglyLinkedListTester 
+public class DoublyLinkedListTester 
 {
     public static void main(String[] args)
     {
-    SinglyLinkedList list1 = new SinglyLinkedList();
-    SinglyLinkedList list3 = new SinglyLinkedList();
+    DoublyLinkedList list1 = new DoublyLinkedList();
+    DoublyLinkedList list3 = new DoublyLinkedList();
     list1.addFirst(100);
     list1.addFirst(72);
     list1.addFirst(100);
@@ -28,7 +24,7 @@ public class SinglyLinkedListTester
 //    list1.Q8(list1);
 //    list1.Q9(list1,2,4);
 //    list1.Q10(list1);
-//    list1.Q11(list1);
+    list1.Q11(list1);
 //    list1.Q12(list1);
 //    list1.Q13(list1, list3);
 //    list1.Q14(list1);
@@ -37,7 +33,7 @@ public class SinglyLinkedListTester
 //    list3.display();
     System.out.println();
     
-    SinglyLinkedList list2 = new SinglyLinkedList();
+    DoublyLinkedList list2 = new DoublyLinkedList();
     list2.addFirst("Bob");
     list2.addFirst("Kappa");
     list2.addFirst("PogChamp");

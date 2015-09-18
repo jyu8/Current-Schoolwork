@@ -18,8 +18,7 @@ public class DoublyLinkedList
     }
     private Node head;
     private Node tail;
-    private int size;
-    
+    private int size; 
     public DoublyLinkedList()
     {
         head = null;
@@ -59,7 +58,8 @@ public class DoublyLinkedList
         }
         else if (index == size)
         {
-            tail = new Node(data, null tail);
+            tail = new Node(data, null, tail);
+            tail.prev.next = tail;
         }
         else
         {
@@ -107,7 +107,7 @@ public class DoublyLinkedList
     }
     public int find(Object data)
     {
-        int i = 0;
+        int i;
         Node tmp = head;
         for ( i = 0; i < size; i++)
         {
@@ -162,6 +162,174 @@ public class DoublyLinkedList
         {
             remove(i);
             return true;
+        }
+    }
+    public void Q1(DoublyLinkedList list)
+    {
+        Node tmp = list.head;
+        if(tmp.next == null)
+        {
+            System.out.println("List too small");
+        }
+        else
+        {
+            list.remove(1);
+        }
+    }
+    public void Q2(DoublyLinkedList list)
+    {
+        Node tmp = list.head;
+        if(tmp.next == null)
+        {
+            System.out.println("List too small");
+        }
+        while(tmp.next != null)
+        {
+            tmp = tmp.next;
+        }
+        list.remove(tmp.prev.data);
+    }
+    public void Q3(DoublyLinkedList list,int num)
+    {
+        Node tmp = list.head;
+        int myownsize = 0;
+        if(tmp.next == null)
+        {
+            System.out.println("List too small");
+        }
+        while(tmp.next != null)
+        {
+            tmp = tmp.next;
+            myownsize++;
+        }
+        list.add(myownsize--,num);
+    }
+    public void Q4(DoublyLinkedList list)
+    {
+        Node tmp = list.head;
+        Node tmp2 = tmp.next;
+        int num = ((int)tmp.data + (int)tmp2.data)/2;
+        list.add(1,num);
+    }
+    public void Q5(DoublyLinkedList list)
+    {
+        Node tmp = list.head;
+        int sum = 0;
+        while(tmp != null)
+        {
+            sum += (int) tmp.data;
+            tmp = tmp.next;
+        }
+        System.out.println("The sum is " + sum);
+    }
+    public void Q6(DoublyLinkedList list)
+    {
+        Node tmp = list.head;
+        int nodecount = 0;
+        while (tmp!=null)
+        {
+            nodecount++;
+            tmp = tmp.next;
+        }
+        System.out.println("The number of nodes =  " + nodecount);
+    }
+    public void Q7(DoublyLinkedList list,int num)
+    {
+        Node tmp = list.head;
+        int numcount = 0;
+        while(tmp!=null)
+        {
+            if(num == (int) tmp.data)
+            {
+                numcount++;
+            }
+            tmp = tmp.next;
+        }
+        System.out.println("Number of times = " + numcount);
+    }
+    public void Q8(DoublyLinkedList list)
+    {
+        Node tmp = list.head;
+        while (tmp != null)
+        {
+            System.out.println(tmp.data);
+            if(tmp.next == null)
+                break;
+            else
+                tmp= tmp.next.next;
+        }
+    }
+    public void Q9(DoublyLinkedList list,int num1,int num2)
+    {
+        Object number1 = get(num1);
+        Object number2 = get(num2);
+        set(num1,number2);
+        set(num2,number1);    
+    }
+    public void Q10(DoublyLinkedList list)
+    {
+        Node tmp = head;
+        int max = (int) tmp.data;
+        while(tmp !=null)
+        {
+            if((int) tmp.data > max)
+                max = (int) tmp.data;
+            tmp = tmp.next;
+        }
+        System.out.println("The max is = " + max);
+    }
+    public void Q11(DoublyLinkedList list)
+    {
+        int i, j, maxIndex, tmp;
+        int n = list.size;
+        for (i = 0; i < n-1; i++) 
+        {
+            maxIndex = i;
+            for (j = i+1; j < n; j++)
+            {
+                if ((int) list.get(j) > (int) list.get(maxIndex))
+                {
+                    tmp = (int) list.get(maxIndex);
+                    list.set(maxIndex, list.get(j));
+                    list.set(j, tmp);
+                }
+            }
+        }
+    }
+    public void Q12(DoublyLinkedList list) 
+    {
+        int i, j, minIndex, tmp;
+        int n = list.size;
+        for (i = 0; i < n - 1; i++) 
+        {
+            minIndex = i;
+            for (j = i + 1; j < n; j++)
+            {
+                if ((int) list.get(j) < (int) list.get(minIndex))
+                {
+                    tmp = (int) list.get(minIndex);
+                    list.set(minIndex, list.get(j));
+                    list.set(j, tmp);
+                }
+            }
+        }
+    }
+    public void Q13(DoublyLinkedList list1,DoublyLinkedList list2)
+    {
+        int j = 0;
+        for(int i = 0; i<list1.size; i++)
+        {
+            list2.addLast(list1.get(j));
+            j++;
+        }
+    }
+    public void Q14(DoublyLinkedList list)
+    {
+        int j = list.size-1;
+        for(int i = 0; i<list.size;i++)
+        {
+            System.out.println(list.get(j));
+            j--;
         }
     }
 }
