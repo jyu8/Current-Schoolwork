@@ -1,0 +1,113 @@
+<!doctype.html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Assignment 1 </title>
+	</head>
+	<body>
+		<h2> Mars Tourism Board. Welcome. We are here to help. Don't worry, about a thing!</h2>
+		<form action= "code.html" method = "GET">
+			<p>
+				<h3> What is the primary purpose of your trip? </h3>
+				<label><input type = "radio" value = "Buisness" name = "purpose" >Buisness </label>
+				<label><input type = "radio" value = "General Tourism" name = "purpose">General Tourism </label>
+				<label><input type = "radio" value = "Romance" name = "purpose" >Romance </label>
+				<br>
+			</p>
+
+			<h3> Who is travelling with you? Please check all that apply </h3>
+			<table>
+				<tr>		
+					<td><input type = "checkbox" value = "Adults" name = "companion[0]" />Adults </td>
+					<td><input type = "checkbox" value = "Cybogs or Androids" name = "companion[1]" />Cyborgs or Androids </td>
+					<td><input type = "checkbox" value = "Pets" name = "companion[2]" />Pets </td>
+				</tr>
+				<tr>
+					<td><input type = "checkbox" value = "Minors" name = "companion[3]" />Minors </td>
+					<td><input type = "checkbox" value = "Enhanced animal" name = "companion[4]" />Enhanced animal<td>
+				</tr>
+			</table>
+
+			<h3> Where will you stay the majority of the trip? </h3>
+			<table>
+				<tr>
+					<td><label><input type = "radio" value = "Olympus Mons" name = "residence" ><em>The Resort</em> at Olympus Mons  </label></td>
+					<td><label><input type = "radio" value = "Government Facility" name = "residence" >Government Facility </label> </td>
+				</tr>
+				<tr>
+					<td><label><input type = "radio" value = "Valles Marineris" name = "residence"><em>Mariner Lodge</em> at Valles Marineris</label></td>
+					<td><label><input type = "radio" value = "Prospecting or working claim" name = "residence" >Prospecting or working claim  </label></td>
+				</tr>
+				<tr>
+					<td><label><input type = "radio" value = "Planum Boreum" name = "stay"><em>Northern Vistas</em> at Planum Boreum </label></td>
+					<td><label><input type = "radio" value = "Other" name = "residence" >Other </label></td>
+				</tr>
+			</table>
+
+			<h3> What activies are you interested in? Please check all that apply </h3>
+			<table>
+				<tr>		
+					<td><input type = "checkbox" value = "Pod racer rally" name = "Activities[0]" />Amazonis Planitia 500 km pod racer rally </td>
+					<td><input type = "checkbox" value = "Photography" name = "Activities[1]" />Photography </td>
+				</tr>
+				<tr>
+					<td><input type = "checkbox" value = "Snowmobile trek" name = "Activities[2]" />Planum Boreum snowmobile trek</td>
+					<td><input type = "checkbox" value = "Research" name = "companion[3]" />Research<td>
+				</tr>
+				<tr>
+					<td><input type = "checkbox" value = "prospecting or working claim" name = "Activities[4]" />Water/mineral prospecting or working claim </td>
+			</table>
+
+			<hr noshade size = 3 width = 500 align = left>
+			<h3> Personal Information </h3>
+
+			Preferred salutation
+			<select name = "selector">
+				<option value"Mr"> Mr. </option>
+				<option value"Ms"> Ms. </option>
+				<option value"Mrs"> Mrs. </option>
+				<option value"Dr"> Dr. </option>
+				<option value"Private"> Private </option>
+				<option value"Captain"> Captain </option>
+			</select>
+			<br>
+
+			<table>
+				<tr>	
+					<td>Last Name</td>
+					<td> <input type ="text" name="Last Name" /></td>
+				</tr>
+				<tr>	
+					<td>Identification Number</td>
+					<td> <input type ="password" name="Identification number" /></td>
+				</tr>
+				<tr>	
+					<td>Email</td>
+					<td> <input type ="text" name="Email" /></td>
+				</tr>
+			</table>
+
+			<h3>What Are you?</h3>
+			<select name = "selector">
+				<option value"Human"> Human </option>
+				<option value"Space Alien"> Space Alien </option>
+				<option value"Android"> Android </option>
+				<option value"Cyborg"> Cyborg </option>
+				<option value"Enhanced Animal"> Enhanced Animal </option>
+			</select>
+
+			<h3>Other comments/questions?</h3>
+
+			<textarea name="all-thenext"
+			resizeable = "true"
+			cols = "70"
+			rows = "10"
+			onchange="console.log(this.value);">This text will be forwarded to a "customer associate for careful analysis. We will be getting back to you.</textarea>
+
+			<h3>Your instructions are to click</h3>
+			<button type = "Reset" onclick= "Reset"> Clear all data	</button>
+			<button type = "Submit" onclick= "Submit"> Tell us what we need to know </button>
+			
+	</body>
+</html>
+	
