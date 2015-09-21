@@ -80,7 +80,7 @@ public class SinglyLinkedList
             for (int i = 0; i < index; i++)
                 tmp = tmp.next;
             removedData = tmp.next.data;
-            tmp.prev.next = tmp.next;
+            tmp.next = tmp.next.next;
         }
         size--;
         return removedData;
