@@ -78,17 +78,26 @@ public class CSinglyLinkedList
         if (index == size - 1)
         {
             Node tmp = head;
-            for (int i = 0; i < index-1; i++)
-                tmp = tmp.next;
-            System.out.println("Final value"+tmp.data);
+            Node tmp2 = head;
+            for (int i = 0; i < index+1; i++)
+            {
+                tmp = tmp2;
+                tmp2 = tmp2.next;
+            }
             tmp.next = head;
-            System.out.println("the head data is"+head.data);
-            System.out.println("HEY"+tmp.next.data);
         }
         if(index == 0)
         {
-           head = head.next;
+           Node tmp = head;
+            for (int i = 0; i < size-1; i++)
+            {
+                tmp = tmp.next;
+                
+            }
+            head = head.next;
+            tmp.next = head;
         }
+        
         else
         {
             Node tmp = head;
@@ -159,12 +168,11 @@ public class CSinglyLinkedList
                 tmp = tmp.next;
             }
             tmp.next = head;
-            System.out.println("Last node is " + tmp.data);
-            System.out.println("Next node is " + tmp.next.data);
         }
     }
     public void Game(CSinglyLinkedList list,int s, int k)
     {
+        Scanner keyboard = new Scanner(System.in);
         Node remove;
         Node tmp = head;
         for (int i = 0; i < s-1 ;i++)
@@ -179,24 +187,24 @@ public class CSinglyLinkedList
                 System.out.println(tmp.data);
                 tmp = tmp.next;
             }
-            System.out.println("Remove"+tmp.data);
-            list.remove(tmp.data);
-            tmp = tmp.next;
-            list.display();
-        while(size != 1)
-        {
-            for (int i = 0; i < k;i++)
-            {
-                System.out.print(tmp.data);
-                System.out.println(tmp.next.data);
-                tmp = tmp.next;
-            }
-            System.out.println("hey"+tmp.data);
+            System.out.println("Remove "+tmp.data);
             list.remove(tmp.data);
             tmp = tmp.next;
             list.display();
             System.out.println("Press enter to continue...");
-            Scanner keyboard = new Scanner(System.in);
+            keyboard.nextLine();
+        while(size != 1)  
+        {
+            for (int i = 0; i < k-1;i++)
+            {
+                System.out.println(tmp.data);
+                tmp = tmp.next;
+            }
+            System.out.println("eliminated "+tmp.data);
+            list.remove(tmp.data);
+            tmp = tmp.next;
+            list.display();
+            System.out.println("Press enter to continue...");
             keyboard.nextLine();
         }
     }

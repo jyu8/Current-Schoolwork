@@ -2,22 +2,30 @@ package stuinfo;
 
 public class StuInfo 
 {
-    //node class (inner class)
-    private class Node
+    private class Studata
     {
         private int ID;
         private String Lname;
         private int age;
         private double gpa;
-        private Node next;
-        private Node prev;
-        
-        private Node(int ID,String Lname,int age,double gpa,Node next,Node prev)
+        private Studata(int ID, String Lname,int age,double gpa)
         {
             this.ID = ID;
             this.Lname = Lname;
             this.age = age;
             this.gpa = gpa;
+        }
+    }    
+    //node class (inner class)
+    private class Node
+    {
+       
+        private Node next;
+        private Node prev;
+        private Studata sdata;
+        private Node(Studata sdata,Node next,Node prev)
+        {
+            this.sdata = sdata;
             this.next = next;
             this.prev = prev;
         }
@@ -31,6 +39,7 @@ public class StuInfo
         tail = null;
         size = 0;
     }
+    public class 
     public Object get(int index)
     {
         if (index < 0 || index >= size)

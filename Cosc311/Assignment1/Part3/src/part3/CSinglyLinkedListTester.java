@@ -18,13 +18,11 @@ public class CSinglyLinkedListTester
         Scanner S = new Scanner(System.in);
         int n = S.nextInt();
         list.CreateGroup(list,n);
-        list.display();
         System.out.print("Enter the starting person. s = ");
         int s = S.nextInt();
         System.out.print("Enter how many people are skipped. k = ");
         int k = S.nextInt();
         list.Game(list,s,k);
-        list.display();
-        System.out.println("is your loser");
+        System.out.println(list.get(0)+ "is your loser");
     }
 }

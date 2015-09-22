@@ -40,6 +40,7 @@ public class StuInfoTester {
                 int y = S.nextInt();
                 System.out.println("Enter the gpa");
                 int z = S.nextInt();
+                database.add(w,x,y,z);
             }
         }
     }
