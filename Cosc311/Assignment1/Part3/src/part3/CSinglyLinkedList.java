@@ -184,28 +184,20 @@ public class CSinglyLinkedList
         list.display();
         for (int i = 0; i < k-1;i++)
             {
-                System.out.println(tmp.data);
                 tmp = tmp.next;
             }
-            System.out.println("Remove "+tmp.data);
+            System.out.println("Eliminated "+tmp.data);
             list.remove(tmp.data);
             tmp = tmp.next;
-            list.display();
-            System.out.println("Press enter to continue...");
-            keyboard.nextLine();
         while(size != 1)  
         {
             for (int i = 0; i < k-1;i++)
             {
-                System.out.println(tmp.data);
                 tmp = tmp.next;
             }
-            System.out.println("eliminated "+tmp.data);
+            System.out.println("Eliminated "+tmp.data);
             list.remove(tmp.data);
             tmp = tmp.next;
-            list.display();
-            System.out.println("Press enter to continue...");
-            keyboard.nextLine();
         }
     }
 }
