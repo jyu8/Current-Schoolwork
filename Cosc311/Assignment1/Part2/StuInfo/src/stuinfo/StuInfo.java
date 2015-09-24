@@ -24,7 +24,7 @@ public class StuInfo
     }
     private Node head;
     private Node tail;
-    private int size; 
+    public int size; 
     public StuInfo()
     {
         head = null;
@@ -141,6 +141,11 @@ public class StuInfo
         else 
             return i;
     }
+    public int find(Node data)
+    {
+        int i = data.ID;
+        return find(i);
+    }
     public Node get(int index)
     {
         if (index < 0 || index >= size)
@@ -193,5 +198,24 @@ public class StuInfo
         size = size - 1;
         System.out.print("Removed Student: ");
         displayinfo(removedData);
+    }
+    public void RemoveAll()
+    {
+        while(size != 0)
+        {
+            Node tmp = get(0);
+            remove(tmp.ID);
+        }
+    }
+    public void RemoveFirst()
+    {
+        Node tmp = get(0);
+        remove(tmp.ID);
+    }
+    public String PrintInfo(Node tmp)
+    {
+        String kappa = ("ID: "+tmp.ID+" Last name: "+tmp.Lname+" Age: " 
+                +tmp.age+" GPA: "+tmp.gpa);
+        return kappa;
     }
 }

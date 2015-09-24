@@ -1,9 +1,7 @@
 package stuinfo;
 import java.util.Scanner;
 import java.io.*;
-/**
- * @author Josh
- */
+//Author: Josh Yu
 public class Main
 {
      public static void main(String[] args)
@@ -11,7 +9,7 @@ public class Main
         Scanner S = new Scanner(System.in);
         Scanner scan = new Scanner(System.in);
         StuInfo database = new StuInfo();
-        char n = 'n'; 
+        char n = 'z'; 
         while (n != 'g')
         {
             System.out.println("Welcome to the University Student Information"
@@ -55,22 +53,52 @@ public class Main
             }
             else if (n == 'e')
             {
-                database.display();
-            }
-            else if (n == 'f')
-            {
                 System.out.println("Enter the file name");
                 String x = scan.nextLine();
                 String fileName = x;
+                try 
+                {
+                    FileWriter fileWriter = new FileWriter(fileName);
+                    try (BufferedWriter bufferedWriter = 
+                            new BufferedWriter(fileWriter)) 
+                    {
+                        int i = 0;
+                        while(i < database.size)
+                        {
+                            bufferedWriter.write(database.PrintInfo(database.get(i)));
+                            bufferedWriter.newLine();
+                            i++;
+                        }             
+                    }
+                }
+                catch(IOException ex) 
+                {
+                    System.out.println( "Error writing to file '"
+                            + fileName + "'");
+                }
+            }
+            else if (n == 'f')
+            {
+                database.RemoveAll();
+                System.out.println("Enter the file name");
+                String filen = scan.nextLine();
+                String fileName = filen;
                 String line = null;
                 try 
                 {
                     FileReader fileReader = new FileReader(fileName);
-                    BufferedReader bufferedReader = 
-                    new BufferedReader(fileReader);
-                    while((line = bufferedReader.readLine()) != null) 
-                        System.out.println(line);   
-                    bufferedReader.close();         
+                    try (BufferedReader bufferedReader = 
+                            new BufferedReader(fileReader)) {
+                        while((line = bufferedReader.readLine()) != null)
+                        {
+                            String[] arrayLine= line.split("\\s+"); 
+                            int w = Integer.parseInt(arrayLine[0]);
+                            String x=arrayLine[1];
+                            int y = Integer.parseInt(arrayLine[2]);
+                            Double z = Double.parseDouble(arrayLine[3]);
+                            database.add(w, x, y, z);
+                        }
+                    }         
                 }
                 catch(FileNotFoundException ex) 
                 {
@@ -80,7 +108,6 @@ public class Main
                 catch(IOException ex) 
                 {
                     System.out.println("Error reading file '" + fileName + "'");                  
-        
                 }
             }
         }
