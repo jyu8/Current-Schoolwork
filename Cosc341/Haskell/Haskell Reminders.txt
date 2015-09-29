@@ -44,3 +44,13 @@ fst takes a pair and returns the first component
 snd takes a pair and returns the 2nd compononet
 ^^^these two only work on pairs
 zip takes two lists and zips them together creating a list of tuples if the sizes dont match, the longer list gets cut off to match the shorter one
+
+Chapter 3:
+3.1:
+:t before any expression returns its type
+:: means has type of
+Interger can represent numbers larger than Int
+Float is a floating point with single precision
+Double is a floating point with double the precision
+Bool is a boolean type
+Char represents a char and a list of chars is a string

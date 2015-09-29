@@ -1,20 +1,40 @@
 package assignment1part1;
 import java.util.Scanner;
-import java.io.*;
 /**
  * @author Josh
  */
 public class Main
 {
+    public final static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+        //  Handle any exceptions.
+        }
+    }
     public static void main(String[] args)
     {
-        Scanner S = new Scanner(System.in);
-        Scanner scan = new Scanner(System.in);
+        Scanner S = new Scanner(System.in); //Scanner for non-Strings
+        Scanner scan = new Scanner(System.in); //2nd scanner for Strings
         BooksCustomers database = new BooksCustomers();
         System.out.println("Welcome to the Online Bookstore");
         char n = 'z'; 
         while (n != 'g')
         {
+            clearConsole();
             System.out.println("Please choose an option");
             System.out.println("A) to add a book");
             System.out.println("B) to order a book");
@@ -23,7 +43,7 @@ public class Main
             System.out.println("E) to display information on a book");
             System.out.println("F) to display status of all books");
             System.out.println("G) to exit");
-            n = S.next(".").charAt(0);
+            n = S.next(".").charAt(0); //get char
             if(n == 'a')
             {
                 System.out.println("Enter the book title");

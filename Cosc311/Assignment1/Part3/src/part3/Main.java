@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Author: Josh Yu
 package part3;
 import java.util.Scanner;
-/**
- *
- * @author Josh
- */
+
 public class Main
 {
     public static void main(String[] args)
@@ -22,7 +15,8 @@ public class Main
         int s = S.nextInt();
         System.out.print("Enter how many people are skipped. k = ");
         int k = S.nextInt();
+        //Get the inputs and start the game
         list.Game(list,s,k);
-        System.out.println(list.get(0)+ "is your loser");
+        System.out.println(list.get(0)+ " is your loser");
     }
 }

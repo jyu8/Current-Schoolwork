@@ -1,0 +1,32 @@
+body
+{
+	background-color:#4FB363;
+}
+h3
+{
+	color :#B34F9F;
+}
+td.center
+{
+	text-align: center;
+}
+p
+{
+	text-indent: 50px;
+	border-style: groove;
+	font-family: Courier New;
+
+}
+tr.row1
+{
+	color: #7A5E1C;
+}
+tr.row2
+{
+	color: #4F6DB3;
+}
+img 
+{
+	float:left;
+	border-style: groove;
+}

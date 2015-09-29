@@ -6,8 +6,8 @@ public class Main
 {
      public static void main(String[] args)
     {
-        Scanner S = new Scanner(System.in);
-        Scanner scan = new Scanner(System.in);
+        Scanner S = new Scanner(System.in); //Scanner for inputs
+        Scanner scan = new Scanner(System.in); //Scanner for strings
         StuInfo database = new StuInfo();
         char n = 'z'; 
         while (n != 'g')
@@ -26,26 +26,26 @@ public class Main
             if (n == 'a')
             {
                 System.out.println("Enter the ID number");
-                int w = S.nextInt();
+                int ID = S.nextInt();
                 System.out.println("Enter the last name");
-                String x = scan.nextLine();
+                String lname = scan.nextLine();
                 System.out.println("Enter the student age");
-                int y = S.nextInt();
+                int age = S.nextInt();
                 System.out.println("Enter the gpa");
-                double z = S.nextDouble();
-                database.add(w,x,y,z);
+                double gpa = S.nextDouble();
+                database.add(ID,lname,age,gpa);
             }
             else if (n == 'b')
             {
                 System.out.println("Enter the ID number");
-                int w = S.nextInt();
-                database.remove(w);
+                int ID = S.nextInt();
+                database.remove(ID);
             }
             else if (n == 'c')
             {
                 System.out.println("Enter the ID number");
-                int w = S.nextInt();
-                database.displayinfo(database.get(database.find(w)));
+                int ID = S.nextInt();
+                database.displayinfo(database.get(database.find(ID)));
             }
             else if (n == 'd')
             {
@@ -92,11 +92,11 @@ public class Main
                         while((line = bufferedReader.readLine()) != null)
                         {
                             String[] arrayLine= line.split("\\s+"); 
-                            int w = Integer.parseInt(arrayLine[0]);
-                            String x=arrayLine[1];
-                            int y = Integer.parseInt(arrayLine[2]);
-                            Double z = Double.parseDouble(arrayLine[3]);
-                            database.add(w, x, y, z);
+                            int ID = Integer.parseInt(arrayLine[0]);
+                            String lname = arrayLine[1];
+                            int age  = Integer.parseInt(arrayLine[2]);
+                            Double gpa = Double.parseDouble(arrayLine[3]);
+                            database.add(ID,lname,age,gpa);
                         }
                     }         
                 }

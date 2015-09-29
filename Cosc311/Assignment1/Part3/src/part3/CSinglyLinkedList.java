@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Author: Josh Yu
 package part3;
-import java.util.Scanner;
-/**
- *
- * @author Josh
- */
 public class CSinglyLinkedList
 {
     //node class(inner class)
@@ -56,11 +47,12 @@ public class CSinglyLinkedList
         tmp.data = data;
         return oldData;
     }
+    //Adds data to the list
     public void add(int index, Object data)
     {
+        //Index out of bounds error checking
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException("invalid index "+ index);
-
         //insert at beginning special case
         if(index == 0)
             head = new Node(data, head);
@@ -73,8 +65,11 @@ public class CSinglyLinkedList
         }
         size++;
     }
+    //Removes data from the list
     public void remove( int index)
     {
+        //Special case if the point is at the end of the list
+        //The new "tail" has to be pointing to the head
         if (index == size - 1)
         {
             Node tmp = head;
@@ -86,6 +81,8 @@ public class CSinglyLinkedList
             }
             tmp.next = head;
         }
+        //Special case if the data is at the beginning of the list
+        //The next node from the "tail" needs to be the new head
         if(index == 0)
         {
            Node tmp = head;
@@ -97,7 +94,7 @@ public class CSinglyLinkedList
             head = head.next;
             tmp.next = head;
         }
-        
+        //general case removal
         else
         {
             Node tmp = head;
@@ -107,6 +104,7 @@ public class CSinglyLinkedList
         }
         size--;
     }
+    //Returns the index given a data object
     public int find(Object data)
     {
         int i;
@@ -123,6 +121,7 @@ public class CSinglyLinkedList
         else 
             return i;
     }
+    //Displays all of the data in the Clinked list
     public void display()
     {
         int i;
@@ -139,6 +138,7 @@ public class CSinglyLinkedList
     {
         return size;
     }
+    //Alternate input for function that takes data instead of index)
     public boolean remove(Object data)
     {
         int i = find(data);
@@ -151,8 +151,10 @@ public class CSinglyLinkedList
             return true;
         }
     }
+    //Creates the singly linked list for the game
     public void CreateGroup(CSinglyLinkedList list,int n)
     {   
+        //The game cannot be played alone or with nobody
         if(n <= 1)
             System.out.println("Group too small");
         else
@@ -170,32 +172,25 @@ public class CSinglyLinkedList
             tmp.next = head;
         }
     }
+    //Plays the game with the inputs and the list
     public void Game(CSinglyLinkedList list,int s, int k)
     {
-        Scanner keyboard = new Scanner(System.in);
-        Node remove;
         Node tmp = head;
-        for (int i = 0; i < s-1 ;i++)
+        for (int i = 0; i < s-1 ;i++) //loop to the starting int
         {
             tmp = tmp.next;
         }
         System.out.println("The starting point is at " + tmp.data);
-        //1st case is special becuase it exlcudes the starting point
-        list.display();
-        for (int i = 0; i < k-1;i++)
-            {
-                tmp = tmp.next;
-            }
-            System.out.println("Eliminated "+tmp.data);
-            list.remove(tmp.data);
-            tmp = tmp.next;
+        //removed for output printing
+        //list.display();
         while(size != 1)  
         {
-            for (int i = 0; i < k-1;i++)
+            for (int i = 0; i < k-1;i++) //loops to the elimination point
             {
                 tmp = tmp.next;
             }
-            System.out.println("Eliminated "+tmp.data);
+            //Removed for output printing
+            //System.out.println("Eliminated "+tmp.data);
             list.remove(tmp.data);
             tmp = tmp.next;
         }
