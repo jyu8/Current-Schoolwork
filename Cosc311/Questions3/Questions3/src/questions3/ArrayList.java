@@ -112,5 +112,77 @@ public class ArrayList
         for(int i = 0; i < size; i++)
             newArray[i] = array[i];
         array = newArray;
-    }     
+    }
+    public void Q1()
+    {
+        for (int i = 2; i < size; i++)
+            array[i-1] = array[i];
+        size--;
+    }
+    public void Q2()
+    {
+        size--;
+    }
+    public void Q3(Object data)
+    {
+        Object temp = array[size-1]; 
+        array[size-1] = data;
+        array[size] = temp;
+        size++;
+    }
+    public void Q4()
+    {
+        int num1 = (int)array[0];
+        int num2 = (int)array[1];
+        int value = (num1+num2)/2;
+        for(int i = 1; i<size; i++)
+            array[i-1] = array[i];
+        array[1] = value;
+        size++;
+    }
+    public void Q5(Object data)
+    {
+        int count = 0;
+        for(int i = 0; i < size; i++)
+        {
+            if(data == array[i])
+                count++;
+        }
+        System.out.println("Times: "+ count);
+    }
+    public void Q6()
+    {
+        for(int i =0; i <size; i+=2)
+        {
+            System.out.println(array[i]);
+        }
+    }
+    public void Q7(int place1, int place2)
+    {
+        Object temp1 = array[place1];
+        Object temp2 = array[place2];
+        array[place1] = temp2;
+        array[place2] = temp1;
+    }
+    public void Q8()
+    {
+        int max = (int) array[0];
+        for(int i = 0; i <size; i++)
+        {
+            if(max < (int)array[i])
+            {
+                max = (int)array[i];
+            }
+        }
+        System.out.println("The max is: " + max);
+    }
+    public void Q9(ArrayList list)
+    {
+        
+    }
+    public void Q10()
+    {
+        System.out.println("hey" + array[size+1]);
+    }
 }
+

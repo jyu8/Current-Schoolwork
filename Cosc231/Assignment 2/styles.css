@@ -1,16 +1,21 @@
-h3
-{
-	font-family: "Helvetica, Arial, sans-serif";
-}
 div 
 {
-    background-color: lightgrey;
+    background-color:#2E4272;
     width: 300px;
     padding: 25px;
     border: 25px solid navy;
     margin: 25px;
 }
-#center
+
+td,th
 {
-	text-align: center;
+	border: 1px black solid;
+}
+body
+{
+	background-color:#2D882D;
+}
+h4
+{
+	color :#2E4172;
 }
