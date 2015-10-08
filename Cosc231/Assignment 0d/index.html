@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+
+
+<body>
+
+	<div id = "container">
+	<div>
+
+	<script type = text/javascript>
+
+	var style = document.createElement("STYLE");
+	var node = document.createTextNode("th,td{border: 1px black solid;}");
+	style.appendChild(node);
+	var node = document.createTextNode("body{background-color:#4FB363;}");
+	style.appendChild(node);
+	var node = document.createTextNode("tr.row1{color: #7A5E1C;}");
+	style.appendChild(node);
+	document.head.appendChild(style);
+
+	var title = document.createElement("TITLE");
+	var node = document.createTextNode("Josh Yu's Site");
+	title.appendChild(node);
+	document.head.appendChild(title);
+
+	var row1 = document.createAttribute("CLASS");
+	row1.value = "row1";
+
+
+
+	var div = document.getElementById("container");
+	
+
+	var header = document.createElement("H3");
+	var node = document.createTextNode("Welcome to the site of Josh Yu")
+	header.appendChild(node);
+	div.appendChild(header);
+
+	var a = document.createElement("a");
+	var linkText = document.createTextNode("My 231 Folder");
+	a.appendChild(linkText);
+	a.href = "http://people.emich.edu/jyu8/231";
+
+	linebreak = document.createElement("br");
+	a.appendChild(linebreak);
+
+	div.appendChild(a);
+
+	var a2 = document.createElement("a");
+	var linkText = document.createTextNode(" My Github");
+	a2.appendChild(linkText);
+	a2.href = "https://github.com/jyu8";
+	div.appendChild(a2);
+
+	//Paragraph was created in this way because the createTextNode was not accepting newline in its parameters
+	var para = document.createElement("p");
+	var paratext = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac leo dol");
+	para.appendChild(paratext);
+	linebreak = document.createElement("br");
+	para.appendChild(linebreak); 
+
+	var paratext = document.createTextNode("or. Sed vel laoreet neque, a semper mauris. Vivamus at maximus erat, ac fin");
+	para.appendChild(paratext);
+	linebreak = document.createElement("br");
+	para.appendChild(linebreak);
+
+	var paratext = document.createTextNode("ibus turpis. Vestibulum eros sem, volutpat a vehicula a, pulvinar sit amet ");
+	para.appendChild(paratext);
+	
+	var strong = document.createElement("STRONG");
+	var strongtext = document.createTextNode("ipsum");
+	strong.appendChild(strongtext);
+	para.appendChild(strong);
+
+	linebreak = document.createElement("br");
+	para.appendChild(linebreak); 
+
+	var paratext = document.createTextNode("tempor dui pulvinar vel. Aliquam blandit sodales lobortis. Suspendisse ");
+	para.appendChild(paratext);
+	linebreak = document.createElement("br");
+	para.appendChild(linebreak); 
+
+	var paratext = document.createTextNode("blandit sodales pretium. Donec ut ipsum cursus, convallis metus eu, ");
+	para.appendChild(paratext);
+	linebreak = document.createElement("br");
+	para.appendChild(linebreak);
+
+	var paratext = document.createTextNode("Suspendisse in metus vel tortor dictum ultricies vitae in nisi.");
+	para.appendChild(paratext);
+	
+	div.appendChild(para);
+
+	var table = document.createElement("TABLE");
+	var caption = document.createElement("CAPTION");
+	var captiontext = document.createTextNode("Class Schedule");
+	caption.appendChild(captiontext);
+	table.appendChild(caption);
+ 	
+	var row = document.createElement("TR");
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("Class Code/Link");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("Class Title");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("Meeting Days");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("Begin Time");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("End Time");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("Teacher Name");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	var th = document.createElement("TH");
+	var thtext = document.createTextNode("Room Number");
+	th.appendChild(thtext);
+	row.appendChild(th);
+
+	table.appendChild(row); 
+
+	var row = document.createElement("TR");
+	row.setAttributeNode(row1);
+
+	var td = document.createElement("TD");
+	var a = document.createElement("a");
+	var linkText = document.createTextNode("Cosc 231");
+	a.appendChild(linkText);
+	a.href = "https://github.com/pegurnee-edu/cosc231-fa15";
+	td.appendChild(a);
+	row.appendChild(td);
+
+	var td = document.createElement("TD");
+	var tdtext = document.createTextNode("Internet-Based-Computing");
+	td.appendChild(tdtext);
+	row.appendChild(td);
+
+	table.appendChild(row);
+
+	var row = document.createElement("TR");
+
+	var td = document.createElement("TD");
+	var a = document.createElement("a");
+	var linkText = document.createTextNode("Cosc 311");
+	a.appendChild(linkText);
+	a.href = "http://emunix.emich.edu/~haynes/311/wi10/index.html";
+	td.appendChild(a);
+	row.appendChild(td);
+
+	table.appendChild(row);
+
+
+	div.appendChild(table);
+
+	row1.style.color = "red";
+
+	</script>
+
+
+	</body>
+</html>
+
+
+
+<!--
+		<h3>Welcome to the site of Josh Yu</h3>
+		<a href="http://people.emich.edu/jyu8/231"> My 231 Folder </a>
+		<br>
+		<a href="https://github.com/jyu8"> My Github </a>
+
+		<table style = "border: 1px black solid;">
+			<caption> Class Schedule </caption>
+			<tr>
+				<th>Class Code/Link</th>
+				<th>Class Title</th>
+				<th>Meeting Days</th>
+				<th>Begin Time</th>
+				<th>End Time</th>
+				<th>Teacher Name</th>
+				<th>Room Number</th>
+			<tr class = "row1">
+				<td><a href="https://github.com/pegurnee-edu/cosc231-fa15"> Cosc231 </a></td>
+				<td>Internet-Based-Computing</td>
+				<td class = "center">T,Th</td>
+				<td>2:00 PM</td>
+				<td>3:50 PM</td>
+				<td>Eddie Gurnee</td>
+				<td>PH 514</td>
+			</tr>
+			<tr class = "row2">
+				<td><a href="http://emunix.emich.edu/~haynes/311/wi10/index.html"> Cosc311 </a></td>
+				<td>Algorithms & Data Structures</td>
+				<td class = "center">T,Th</td>
+				<td>7:20 PM</td>
+				<td>8:35 PM</td>
+				<td>Suchindran Maniccam</td>
+				<td>PH 202</td>
+			</tr>
+			<tr class = "row1">
+				<td><a href="http://emunix.emich.edu/~haynes/"> Cosc 341 </a></td>
+				<td>Programming Languages</td>
+				<td class = "center">M,W</td>
+				<td>10:00 AM</td>
+				<td>11:15 AM</td>
+				<td>Susan Haynes</td>
+				<td>PH 203</td>
+			</tr>
+			<tr class = "row2">
+				<td><a href="https://canvas.emich.edu/courses/16001"> Math 360 </a></td>
+				<td>Statistical Methods</td>
+				<td class = "center">M,W</td>
+				<td>5:30 PM</td>
+				<td>6:45 PM</td>
+				<td>Rita Chattopadhyay</td>
+				<td>PH 321</td>
+			</tr>
+		</table>
+
+		<br>
+		My Row
+		<br>
+		<p>
+			<img src="images/pic.jpg" alt="My Row" height="300" width="400">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac leo dol
+			or. Sed vel laoreet neque, a semper mauris. Vivamus at maximus erat, ac fin
+			ibus turpis. Vestibulum eros sem, volutpat a vehicula a, pulvinar sit amet 
+			orci. Proin bibendum condimentum<em> <strong> ipsum, </strong> </em> ut 
+			tempor dui pulvinar vel. Aliquam blandit sodales lobortis. Suspendisse 
+			blandit sodales pretium. Donec ut ipsum cursus, convallis metus eu, 
+			bibendum nulla. Aenean ac auctor lorem. Phasellus a odio metus. 
+			Suspendisse in metus vel tortor dictum ultricies vitae in nisi.
+		</p>
+
+		
+
+		<br>
+	-->
+
+
