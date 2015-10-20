@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Oct 15th Code</title>
+    <script type="text/javascript" src="validator.js"> </script>
+  </head>
+
+  <body>
+    <label>Java Identifier Validator:
+      <input type="text" id="javaIDTarget" />
+    </label>
+    <button onclick="console.log(validator.isJavaIdentifier(document.getElementById('javaIDTarget').value));">Click to check</button>
+    <br>
+    <label>Phone Validator:
+      <input type="text" id="phoneTarget" />
+    </label>
+    <button onclick="console.log(validator.isPhone(document.getElementById('phoneTarget').value));">Click to check</button>
+    <br>
+    <label>Email Validator:
+      <input type="text" id="EmailTarget" />
+    </label>
+    <button onclick="console.log(validator.isEmail(document.getElementById('EmailTarget').value));">Click to check</button>
+    <br>
+    <label>Date Validator (mm/dd/yyyy):
+      <input type="text" id="DateTarget" />
+    </label>
+    <button onclick="console.log(validator.isDate(document.getElementById('DateTarget').value));">Click to check</button>
+    <br>
+    <label>EID Validator:
+      <input type="text" id="EIDTarget" />
+    </label>
+    <button onclick="console.log(validator.isEID(document.getElementById('EIDTarget').value));">Click to check</button>
+    <br>
+    <label>Test Regex (Without '/'s)  
+      <input type="text" id="TestRegex" />
+    </label>
+    <label>Test Statement:
+      <input type="text" id="TestStatement" />
+    </label>
+    <button onclick="console.log(validator.isA(document.getElementById('TestRegex').value,document.getElementById('TestStatement').value));">Click to check</button>
+  </body>
+
+</html>

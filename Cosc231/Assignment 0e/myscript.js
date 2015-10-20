@@ -299,3 +299,27 @@ para.style.border = "double";
 
 div.appendChild(para);
 
+function Grayscale()
+{
+	document.body.style.backgroundColor = "gray";
+	document.getElementById("container").style.filter = 'grayscale(100%)';
+}
+function IncreaseFont()
+{
+if (document.body.style.fontSize == "") 
+	document.body.style.fontSize = "1.4em";
+document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (.1) + "em";
+}
+
+function DecreaseFont()
+{
+if (document.body.style.fontSize == "") 
+	document.body.style.fontSize = "1.4em";
+document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (-.1) + "em";
+}
+
+function MenuVisibility()
+{
+	document.getElementById("AssistOptions").style.visibility = 'visible';
+	document.getElementById("AssistMenu").style.visibility = 'hidden';
+}
