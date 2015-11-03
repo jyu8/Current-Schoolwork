@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+
+    <link rel="icon" type="image/png" href="images/doom.ico"> 
+    <link rel="stylesheet" type="text/css" href="club-general.css">
+    <script type = text/javascript src = cookieLib.js></script>
+
+    <title> Homepage </title>
+</head>
+
+<body onload="GetCookie('username')">
+    <img src="images/doom_banner.png" alt="Dr.Doom" />                  
+    <nav>
+      <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="about.html">About The Club</a>
+        </li>
+        <li>
+            <a href="Dr.Doom.html">Dr.Doom Info</a>
+        </li>
+        <li>
+            <a href="join.html">Join</a>
+        </li>
+        <li>
+            <a href="sitemap.html">Sitemap</a>
+        </li>
+      </ul>
+    </nav>
+
+        <div id="member">
+                <script>
+                if (GetCookie('username')) {
+                    var theUser = GetCookie('username');
+                    document.write(`<fieldset>Welcome back, ${ theUser } <button onClick="DeleteCookie('username')">Logout</button></fieldset>`);
+                }
+            </script>
+        </div>
+
+        <h2> Thank you for joining our club </h2>
+
+        </body>
+
+</html>

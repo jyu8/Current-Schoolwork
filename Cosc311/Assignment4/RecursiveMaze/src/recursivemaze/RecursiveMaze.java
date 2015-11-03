@@ -39,8 +39,6 @@ public class RecursiveMaze
     }
     //The maze that is created by reading the file in
     private Maze theMaze;
-    //The stack of coordinates that is iterated when finding the path
-    private ArrayList<Coor> pathlist = new ArrayList();
 
     
     public void createMaze()
@@ -92,13 +90,14 @@ public class RecursiveMaze
     }
     public boolean MazeRun()
     {
-        return MazeRun(theMaze.start);
+        System.out.print("Path:");
+        return MazeRun(theMaze.end);
     }
     private boolean MazeRun(Coor start)
     {
         boolean finished = false;
         start.visited = true;
-        if(start.col == theMaze.end.col && start.row == theMaze.end.row)
+        if(start.col == theMaze.start.col && start.row == theMaze.start.row)
         {
             finished = true; 
         }
@@ -138,7 +137,7 @@ public class RecursiveMaze
             }
         }
         if(finished == true)
-            pathlist.add(start);
+            System.out.print("("+start.row+","+start.col+")");
         return finished;
     }
     //Takes the inputs from the text file and generates a maze of coordinates
@@ -167,21 +166,6 @@ public class RecursiveMaze
 	Maze tmpmaze = new Maze(cmaze,rows,cols,start,end);
         //Copy the temporary maze into theMaze of the class
 	theMaze = tmpmaze;
-    }
-    public void printPath()
-    {
-        System.out.print("Path: ");
-        printPath(pathlist.size()-1);
-        System.out.println();
-    }
-    private void printPath(int size)
-    {
-        if(size != -1)
-        {
-            System.out.print("("+pathlist.get(size).row+","+pathlist.get(size).col+")");
-            printPath(size-1);
-        }
-        
     }
     //Prints out theMaze with 1 being a wall, 0 being path, B is beginning,
     //E is the end, and V is the spaces that were visited on the path

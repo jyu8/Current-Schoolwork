@@ -8,11 +8,12 @@ public class Main
     	test.createMaze();
     	if(test.MazeRun() == true)
         {
+            System.out.println();
             System.out.println("The maze is solvable");
-            test.printPath();
         }
         else
         {
+            System.out.println();
             System.out.println("The maze is not solvable");
         }
     }

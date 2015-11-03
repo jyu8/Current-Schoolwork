@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+
+    <link rel="icon" type="image/png" href="images/doom.ico"> 
+    <link rel="stylesheet" type="text/css" href="club-general.css">
+    <script type = text/javascript src = cookieLib.js></script>
+
+    <title> About Us </title>
+</head>
+
+<body onload="GetCookie('username')">
+    <img src="images/doom_banner.png" alt="Dr.Doom" />                
+    <nav>
+      <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="about.html">About The Club</a>
+        </li>
+        <li>
+            <a href="Dr.Doom.html">Dr.Doom Info</a>
+        </li>
+        <li>
+            <a href="join.html">Join</a>
+        </li>
+        <li>
+            <a href="sitemap.html">Sitemap</a>
+        </li>
+      </ul>
+    </nav>
+        <div id="member">
+                <script>
+                if (GetCookie('username')) {
+                    var theUser = GetCookie('username');
+                    document.write(`<fieldset>Welcome back, ${ theUser } <button onClick="DeleteCookie('username')">Logout</button></fieldset>`);
+                }
+            </script>
+        </div>
+    <p>
+        This club was founded a three years ago when Dr. Doom reached the top of the tier list for professional players.
+        The club was formed with the idea that Dr. Doom was at the forefront of Umvc3 technology and that his extensive options
+        and assits were very viable and studying techs and strings of Dr. Doom was a cause worthwhile.
+    </p>
+    <h2> Founding Member List </h2>
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> Picture </th>
+            <th> Accomplishments </th>
+            <th> Lineup </th>
+        </tr>
+        <tr>
+            <td> Ryan Ramirez "Filipino Champ" </td>
+            <td> <img src="images/champ.jpg" alt="Filipino Champ" height = "150" width = "150"/>  
+            <td> <ul> 
+                <li> SoCal Reg 2015 1st Place </li>
+                <li> Canada Cup 2014 1st Place </li>
+                <li> EVO 2014 3rd Place </li>
+            </ul></td>
+            <td> Magneto/Phoenix/Dr. Doom </td>
+        </tr>  
+        <tr>
+            <td> Raynel Hidalgo "RayRay" </td>
+            <td> <img src="images/rayray.jpg" alt="Rayray" height = "150" width = "150"/>  
+            <td> <ul> 
+                <li> Yoryuken 4 2nd Place </li>
+                <li> Apex 2015 1st Place</li>
+                <li> EVO 2015 2nd Place </li>
+            </ul></td>
+            <td> Magneto/Sentinel/Dr. Doom </td>
+        </tr>  
+        <tr>
+            <td> Eduardo Perez "PR Balrog" </td>
+            <td> <img src="images/rog.jpg" alt="rog" height = "150" width = "150"/>  
+            <td> <ul> 
+                <li> Canado Cup 2015 1st Place </li>
+                <li> First Attack 2014 1st Place</li>
+                <li> NE Championships 2015 2nd Place </li>
+            </ul></td>
+            <td> Vergil/Wolverine/Dr.Doom </td>
+        </tr>  
+    </table>
+
+        
+</body>
+
+</html>

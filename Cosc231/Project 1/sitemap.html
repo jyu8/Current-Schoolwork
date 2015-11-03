@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+
+    <link rel="icon" type="image/png" href="images/doom.ico"> 
+    <link rel="stylesheet" type="text/css" href="club-general.css">
+    <script type = text/javascript src = cookieLib.js></script>
+
+    <title> Homepage </title>
+</head>
+
+<body onload="GetCookie('username')">
+    <img src="images/doom_banner.png" alt="Dr.Doom" />               
+    <nav>
+      <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="about.html">About The Club</a>
+        </li>
+        <li>
+            <a href="Dr.Doom.html">Dr.Doom Info</a>
+        </li>
+        <li>
+            <a href="join.html">Join</a>
+        </li>
+        <li>
+            <a href="sitemap.html">Sitemap</a>
+        </li>
+      </ul>
+    </nav>
+        <div id="member">
+                <script>
+                if (GetCookie('username')) {
+                    var theUser = GetCookie('username');
+                    document.write(`<fieldset>Welcome back, ${ theUser } <button onClick="DeleteCookie('username')">Logout</button></fieldset>`);
+                }
+            </script>
+        </div>
+    <table>
+    	<tr>
+    		<th>Link</th>
+    		<th>Description</th>
+    	</tr>
+    	<tr>
+    		<td><a href="index.html">Home</a></td>
+    		<td> Homepage of the site with upcomming events </td>
+    	</tr>
+    	<tr>
+    		<td> <a href="about.html">About The Club</a> </td>
+    		<td> Club information and members </td>
+    	</tr>
+    	<tr>
+    		<td> <a href="Dr.Doom.html">Dr.Doom Bio</a> </td>
+    		<td> Information and trivia on Dr. Doom </td>
+    	</tr>
+    	<tr>
+    		<td> <a href="join.html">Join</a> </td>
+    		<td> Joining form for Comprehending Doom </td>
+    	</tr>
+    	<tr>
+    		<td> <a href="sitemap.html">Sitemap</a> </td>
+    		<td> Sitemap for this site </td>
+    	</tr>
+    </table>
+
+
+
+            
+</body>
+
+</html>
