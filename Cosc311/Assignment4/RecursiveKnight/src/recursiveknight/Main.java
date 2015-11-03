@@ -1,7 +1,5 @@
 package recursiveknight;
 import java.util.Scanner;
-import java.io.*;
-
 
 public class Main {
 
@@ -18,7 +16,15 @@ public class Main {
         System.out.println("Enter starting row location");
         int srow = scan.nextInt();
         test.makeBoard(row,col,scol,srow);
-        test.move();
+        System.out.println();
+        if(test.move() == true)
+        {
+            System.out.println("Solution was found");
+        }
+        else
+        {
+            System.out.println("Solution was not found");
+        }
         test.printBoard();
         
     }

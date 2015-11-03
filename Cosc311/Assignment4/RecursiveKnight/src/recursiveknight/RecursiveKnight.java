@@ -39,7 +39,7 @@ public class RecursiveKnight
         {
             for (int j = 0; j < width; j++)
             {
-                System.out.print(board[i][j]+" ");
+                System.out.print(board[i][j]+"  ");
             }
             System.out.println();
         }
@@ -47,29 +47,28 @@ public class RecursiveKnight
     
     public boolean move()
     {
-        System.out.println("Starting...");
         return move(startx,starty,1);
     }
     private boolean move(int x,int y,int movenum)
     {
-        System.out.println("check:" + movenum + "at:" + y + x);
+        //System.out.println("check:" + movenum + "at:" + y + x);
         if (x < 0 || x > (width-1) || y < 0 || y > (height-1) )
         {
             return false;
         }
-        if (visit[y][x] == false)
+        if (visit[y][x] == true)
         {
             return false;
         }
         if(movenum == maxmoves)
         {
-            System.out.println("Solution was found");
             visit[y][x] = true;
             board[y][x] = movenum;
             return true;
         }
         else
         {
+            visit [y][x] = true;
             boolean finished = false;
             if(finished == false)
                 finished = move(x+2,y+1,movenum+1);
@@ -82,7 +81,7 @@ public class RecursiveKnight
             if(finished == false)
                 finished = move(x+1,y+2,movenum+1);
             if(finished == false)
-                finished = move(x+1,y-1,movenum+1);
+                finished = move(x+1,y-2,movenum+1);
             if(finished == false)
                 finished = move(x-1,y+2,movenum+1);
             if(finished == false)
