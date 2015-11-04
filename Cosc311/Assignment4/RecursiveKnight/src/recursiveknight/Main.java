@@ -1,8 +1,10 @@
 package recursiveknight;
 import java.util.Scanner;
 
-public class Main {
-
+public class Main 
+{
+    //Gets the inputs  for making the board and the starting position
+    //calls makeBoard and move to test it and prints the results
     public static void main(String[] args)
     {
         RecursiveKnight test = new RecursiveKnight();

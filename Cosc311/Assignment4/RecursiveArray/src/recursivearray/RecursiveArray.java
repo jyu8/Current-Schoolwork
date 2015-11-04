@@ -13,6 +13,7 @@ public class RecursiveArray
     	size = 0;
     }
     
+    //creates an array of 20 random numbers
     public void makeArray(int num)
     {
     	makeArray(num,0);
@@ -29,6 +30,7 @@ public class RecursiveArray
         }
     }
     
+    //displays the array
     public void display()
     {
     	display(0);
@@ -43,7 +45,7 @@ public class RecursiveArray
         }
     }
 
-    
+    //returns the sum of the array
     public int sum()
     {
         return sum(0,0,size);
@@ -58,7 +60,7 @@ public class RecursiveArray
         }
     }
 
-    
+    //returns true if there is a zero in the array
     public boolean zeroFinder()
     {
         return zeroFinder(0);
@@ -72,7 +74,7 @@ public class RecursiveArray
         else
         	return zeroFinder(index+1);
     }
-
+    //prints the odd elements of the array
     public void oddPrinter()
     {
         oddPrinter(0);
@@ -90,7 +92,7 @@ public class RecursiveArray
             }          
         }
     }
-
+    //prints every other element in the array
     public void skipPrint()
     {
         skipPrint(0);
@@ -103,7 +105,7 @@ public class RecursiveArray
             skipPrint(index + 2);
         }
     }
-
+    //prints the array in reverse order
     public void reversePrint()
     {
         reversePrint(size-1);

@@ -37,10 +37,12 @@ public class RecursiveMaze
             this.maze = maze;
 	}
     }
+    
     //The maze that is created by reading the file in
     private Maze theMaze;
 
-    
+    //Asks the user for the filename of the maze. Then inputs the data into 
+    //theMaze of RecursiveMaze. Also inputs the start and end of the maze
     public void createMaze()
     {
         Scanner scan = new Scanner(System.in);
@@ -88,29 +90,41 @@ public class RecursiveMaze
         }
         scan.close();
     }
+    //Returns a boolean on the solvability of the maze. The end is put in as 
+    //the start because MazeRun prints the path from the end to the start and 
+    //with the end being the start, the path is correctly printed.
     public boolean MazeRun()
     {
         System.out.print("Path:");
         return MazeRun(theMaze.end);
     }
+    //MazeRun takes the a coordinate and returns true if a path can be found
+    //from the start to the end. Also prints the path in reverse order starting
+    //from the end to the start
     private boolean MazeRun(Coor start)
     {
-        boolean finished = false;
-        start.visited = true;
+        boolean finished = false; //boolean triggered if end is found
+        start.visited = true; //sets the coordinate to visited
+        //nomally this would read start.col == theMaze.end.col but since the
+        //code prints the reverse path, start is used to print from the end
+        //to the start
         if(start.col == theMaze.start.col && start.row == theMaze.start.row)
         {
             finished = true; 
         }
         else
         {
+            //checks downward and runs if the ending has not been found
             if(start.row+1 >= theMaze.rows == false && finished == false)
             {
                 Coor downcheck = theMaze.maze[start.row+1][start.col];
+                //makes sure the space is not wall or visited
                 if(downcheck.visited == false && downcheck.wall == false)
                 {
                     finished = MazeRun(downcheck);
                 }
             }
+            //checks right
             if(start.col+1 >= theMaze.cols == false && finished == false)
             {
                 Coor rightcheck = theMaze.maze[start.row][start.col+1];
@@ -119,6 +133,7 @@ public class RecursiveMaze
                     finished = MazeRun(rightcheck);
                 }
             }
+            //checks up
             if(start.row-1 >= 0 && finished == false)
             {
                 Coor upcheck = theMaze.maze[start.row-1][start.col];
@@ -127,6 +142,7 @@ public class RecursiveMaze
                     finished = MazeRun(upcheck);
                 }
             }
+            //checks left
             if(start.col-1 >= 0 && finished == false)
             {
                 Coor leftcheck = theMaze.maze[start.row][start.col-1];
@@ -136,6 +152,8 @@ public class RecursiveMaze
                 }
             }
         }
+        //If the end was found, print out the coordinates of the solution
+        //to create the reverse path
         if(finished == true)
             System.out.print("("+start.row+","+start.col+")");
         return finished;
@@ -195,5 +213,4 @@ public class RecursiveMaze
             " col " + theMaze.start.col		
            + " and ends at row " + theMaze.end.row + " col " + theMaze.end.col);
     }
-    //Tester that prints the elements of the stack in the correct order
 }

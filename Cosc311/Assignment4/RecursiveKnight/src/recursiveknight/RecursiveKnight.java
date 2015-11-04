@@ -11,12 +11,13 @@ package recursiveknight;
  */
 public class RecursiveKnight 
 {
-    private int[][] board;
-    private boolean [][] visit;
-    private int height, width;
-    private int startx, starty;
-    private int maxmoves;
+    private int[][] board; //Array of ints for the board
+    private boolean [][] visit; //Array if the space has been visited
+    private int height, width; //Height and width of the board
+    private int startx, starty; //starting location of the run
+    private int maxmoves; //Max moves to fill the board
     
+    //public constructor for the board
     public void makeBoard(int h, int w, int col, int row)
     {
         height = h;
@@ -25,9 +26,10 @@ public class RecursiveKnight
         visit = new boolean[height][width];
         starty = col;
         startx = row;
-        maxmoves = height*width;
+        maxmoves = height*width; 
     }
     
+    //Loops through the board and prints it along with row, col, start values
     public void printBoard()
     {
         System.out.println("Rows:" + height);
@@ -45,53 +47,63 @@ public class RecursiveKnight
         }
     }
     
+    //public boolean that returns if the board can be filled
     public boolean move()
     {
-        return move(startx,starty,1);
+        return move(startx,starty,1); //movenum is 1 for the first move
     }
+    //private boolean that takes a coordinate and a movenum and checks around
+    //to see if there is a valid move
     private boolean move(int x,int y,int movenum)
     {
-        //System.out.println("check:" + movenum + "at:" + y + x);
+        //checks to see if the the value is out of bounds
         if (x < 0 || x > (width-1) || y < 0 || y > (height-1) )
         {
             return false;
         }
+        //if it has been visited before go back
         if (visit[y][x] == true)
         {
             return false;
         }
+        //once the board has been filled, return true and set the value 
         if(movenum == maxmoves)
         {
             visit[y][x] = true;
             board[y][x] = movenum;
             return true;
         }
+        //If coordinate is valid and board has not been filled, start chekcing
         else
         {
-            visit [y][x] = true;
-            boolean finished = false;
-            if(finished == false)
-                finished = move(x+2,y+1,movenum+1);
-            if(finished == false)
-                finished = move(x+2,y-1,movenum+1);
-            if(finished == false)
-                finished = move(x-2,y+1,movenum+1);
-            if(finished == false)
-                finished = move(x-2,y-1,movenum+1);
-            if(finished == false)
-                finished = move(x+1,y+2,movenum+1);
-            if(finished == false)
-                finished = move(x+1,y-2,movenum+1);
-            if(finished == false)
-                finished = move(x-1,y+2,movenum+1);
-            if(finished == false)
-                finished = move(x-1,y-2,movenum+1);
+            visit [y][x] = true; //set coordinate to true for future calls
+            boolean finished = false; //boolean if the end has been found
             
+            //movenum is incremented if a valid position is found
+            if(finished == false)
+                finished = move(x+2,y+1,movenum+1); //right 2 up 1
+            if(finished == false)
+                finished = move(x+2,y-1,movenum+1);//right 2 down 1
+            if(finished == false)
+                finished = move(x+1,y+2,movenum+1);//right 1 up 2
+            if(finished == false)
+                finished = move(x+1,y-2,movenum+1);//right 1 down 2
+            if(finished == false)
+                finished = move(x-1,y+2,movenum+1);//left 1 up 2
+            if(finished == false)
+                finished = move(x-1,y-2,movenum+1);//left 1 down 2
+            if(finished == false)
+                finished = move(x-2,y+1,movenum+1);//left 2 up 1
+            if(finished == false)
+                finished = move(x-2,y-1,movenum+1);//left 2 down 1
+            
+            //If the ending was found, put the move number onto the board 
             if(finished == true)
             {
                 board[y][x] = movenum;
                 return true;
             }
+            //if none of these were valid reset the coordinate and step back 
             else
             {
                 visit[y][x] = false;

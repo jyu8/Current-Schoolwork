@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package recursivelist;
+
 
 import java.util.Random;
 /**
@@ -30,7 +25,7 @@ public class RecursiveList
     {
         head = null;
     }
-    
+    //adds 20 random elements to the list
     public void add(int num)
     {
         if(num != 0)
@@ -55,7 +50,7 @@ public class RecursiveList
             add(num-1);
         }
     }
-    
+    //prints the list
     public void display()
     {
         display(head);
@@ -68,7 +63,7 @@ public class RecursiveList
             display(p.next);
         }
     }
-    
+    //adds all 20 together
     public int sum()
     {
         return sum(head);
@@ -82,7 +77,7 @@ public class RecursiveList
             return sum(p.next)+(int)p.data;
         }
     }
-    
+    //returns true if there is a 0
     public boolean zeroFinder()
     {
         return zeroFinder(head);
@@ -96,7 +91,7 @@ public class RecursiveList
         else
             return zeroFinder(p.next);  
     }
-    
+    //prints all odd elements of the array
     public void oddPrinter()
     {
         oddPrinter(head);
@@ -114,6 +109,7 @@ public class RecursiveList
             }          
         }
     }
+    //prints every other in the array
     public void skipPrint()
     {
         skipPrint(head);
@@ -126,7 +122,7 @@ public class RecursiveList
             skipPrint(p.next.next);
         }
     }
-    
+    //prints the array in reverse order
     public void reversePrint()
     {
         reversePrint(head);
